@@ -36,8 +36,11 @@ The scripts below run the project.
    ```sh
    flutter run
    ```
+<br>
 
-### 👍 Conclusion: 
+## 👍 Conclusion: 
+
+<br>
 
 After following the previous steps, the project is running in **development mode**.
 
