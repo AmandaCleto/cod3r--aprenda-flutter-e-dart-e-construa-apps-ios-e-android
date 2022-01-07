@@ -3,7 +3,7 @@
 <br>
 
 ## 💡 Idea:
-This repository is meant to save all the code I may write about this course. ✨
+This repository is meant to save all the code and projects I may write with this course. ✨
 
 <br>
 
