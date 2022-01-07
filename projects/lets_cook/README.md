@@ -40,11 +40,10 @@ Run the command to install the project dependencies.
    ```
 
 ### Running the project:
-The scripts below run the project build.
+The scripts below run the project.
    ```sh
    flutter run
    ```
-   ###### Command to build the project
 
 ### 👍 Conclusion: 
 
