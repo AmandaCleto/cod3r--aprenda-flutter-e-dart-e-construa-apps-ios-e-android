@@ -28,6 +28,10 @@ In this project my main learn was in how to apply navigation in different ways;
 <br>
 
 
+## 🚀 How to execute the project:
+To run and view the project, you will need to follow the next steps.
+  * First you **must have Flutter installed in your machine**, to know more about this, see the doc: https://flutter.dev/docs/get-started/install;
+
 ### Installing dependencies:
 Run the command to install the project dependencies.
    ```sh
@@ -51,7 +55,7 @@ After following the previous steps, the project is running in **development mode
 
 
 ---
-## Links: 🌐
+## 🌐 Links: 
 ***Flutter:***<br>
 [<ins>Flutter docs</ins>](https://docs.flutter.dev/)<br>
 
