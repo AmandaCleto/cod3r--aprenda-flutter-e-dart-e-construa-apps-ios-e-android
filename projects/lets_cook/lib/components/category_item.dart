@@ -30,7 +30,7 @@ class CategoryItem extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: const Color.fromRGBO(255, 254, 229, 1),
+                color: const Color.fromRGBO(244, 244, 244, 1),
                 borderRadius: BorderRadius.circular(5),
               ),
               padding: const EdgeInsets.all(5),
