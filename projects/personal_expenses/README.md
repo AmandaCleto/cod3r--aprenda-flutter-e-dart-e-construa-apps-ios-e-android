@@ -2,12 +2,13 @@
 
 A simple app that you can note the expenses you made; It also has a weekend graphic to you to view how much have you expended in the week.
 
-## A study project on **Flutter**
 
-<br>
+### A study project on **Flutter**
 
 [![Flutter](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-flutter.svg)](https://flutter.dev/)
 [![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-dart.svg)](https://dart.dev/)
+
+<br>
 
 ## 🎇 Apprenticeship:
 
