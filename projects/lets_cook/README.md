@@ -2,13 +2,12 @@
 
 A simple app that shows different dishes divided into categories, so you can mark them as favorite, you can also learn more about how the dishes are made;
 
-## A study project on **Flutter**
-
-<br>
+### A study project on **Flutter**
 
 [![Flutter](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-flutter.svg)](https://flutter.dev/)
 [![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-dart.svg)](https://dart.dev/)
 
+<br>
 
 ## 📷 Illustrative gif of the project:
 ![](https://amandacleto.github.io/images-for-projects/public/images/github-readme/lets-cook-main.png)
