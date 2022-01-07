@@ -1,6 +1,6 @@
 # Let's Cook 🍴
 
-A simple app that shows different dishes divided into categories, so you can mark some as favorite or also learn more about how the dish is made;
+A simple app that shows different dishes divided into categories, so you can mark them as favorite, you can also learn more about how the dishes are made;
 
 ## A study project on **Flutter**
 
