@@ -21,7 +21,7 @@ A simple app that shows different dishes divided into categories, so you can mar
 
 
 
-## Apprenticeship🎇
+## 🎇 Apprenticeship:
 
 In this project my main learn was in how to apply navigation in different ways;
 
@@ -46,7 +46,7 @@ The scripts below run the project build.
    ```
    ###### Command to build the project
 
-### Conclusion: 👍
+### 👍 Conclusion: 
 
 After following the previous steps, the project is running in **development mode**.
 
