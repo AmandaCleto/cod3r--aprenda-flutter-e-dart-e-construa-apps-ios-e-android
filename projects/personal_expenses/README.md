@@ -1,5 +1,7 @@
 # Personal Expenses 📊
 
+A simple app that you can note the expenses you made; It also has a weekend graphic to you to view how much have you expended in the week.
+
 ## A study project on **Flutter**
 
 <br>
@@ -7,7 +9,7 @@
 [![Flutter](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-flutter.svg)](https://flutter.dev/)
 [![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-dart.svg)](https://dart.dev/)
 
-## Goal🎇
+## 🎇 Apprenticeship:
 
 In this first project my main learn was in how to apply responsive and adaptive interfaces
 
@@ -26,13 +28,12 @@ Run the command to install the project dependencies.
    ```
 
 ### Running the project:
-The scripts below run the project build.
+The scripts below run the project.
    ```sh
    flutter run
    ```
-   ###### Command to build the project
 
-### Conclusion: 👍
+### 👍 Conclusion: 
 
 After following the previous steps, the project is running in **development mode**.
 
