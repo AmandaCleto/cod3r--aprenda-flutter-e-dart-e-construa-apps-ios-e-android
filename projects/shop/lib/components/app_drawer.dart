@@ -51,6 +51,25 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(
+              Icons.edit,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'Produtos',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+            ),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed(
+                AppRoutes.PRODUCTS,
+              );
+            },
+          ),
         ],
       ),
     );
