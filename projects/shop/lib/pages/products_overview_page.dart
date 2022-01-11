@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop/components/app_drawer.dart';
 import 'package:shop/components/badge.dart';
 import 'package:shop/components/product_grid.dart';
 import 'package:shop/models/cart.dart';
@@ -39,15 +40,13 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
               ),
             ],
             onSelected: (FilterOptions selectedValue) {
-              if (selectedValue == FilterOptions.favorite) {
-                setState(() {
+              setState(() {
+                if (selectedValue == FilterOptions.favorite) {
                   _showFavoriteOnly = true;
-                });
-              } else {
-                setState(() {
+                } else {
                   _showFavoriteOnly = false;
-                });
-              }
+                }
+              });
             },
           ),
           Consumer<Cart>(
@@ -69,6 +68,7 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
       body: ProductWidget(
         showFavoriteOnly: _showFavoriteOnly,
       ),
+      drawer: const AppDrawer(),
     );
   }
 }

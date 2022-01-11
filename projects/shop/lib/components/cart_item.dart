@@ -5,6 +5,7 @@ import 'package:shop/models/cart_item.dart';
 
 class CartItemWidget extends StatelessWidget {
   final CartItem cartItem;
+
   const CartItemWidget({
     Key? key,
     required this.cartItem,
@@ -30,8 +31,10 @@ class CartItemWidget extends StatelessWidget {
         ),
       ),
       onDismissed: (_) {
-        Provider.of<Cart>(context, listen: false)
-            .removeItem(cartItem.productId);
+        Provider.of<Cart>(
+          context,
+          listen: false,
+        ).removeItem(cartItem.productId);
       },
       child: Card(
         margin: const EdgeInsets.symmetric(
