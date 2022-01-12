@@ -9,7 +9,7 @@ A simple app that shows different dishes divided into categories, so you can mar
 
 <br>
 
-## 📷 Illustrative gif of the project:
+## 📷 Illustrative images of the project:
 ![](https://amandacleto.github.io/images-for-projects/public/images/github-readme/lets-cook-main.png)
 ![](https://amandacleto.github.io/images-for-projects/public/images/github-readme/lets-cook-category.png)
 ![](https://amandacleto.github.io/images-for-projects/public/images/github-readme/lets-cook-dish.png)
