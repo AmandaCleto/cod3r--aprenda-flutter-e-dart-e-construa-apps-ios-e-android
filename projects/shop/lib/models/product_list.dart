@@ -18,7 +18,7 @@ class ProductList with ChangeNotifier {
     return _items.length;
   }
 
-  Future<void> loadProduct() async {
+  Future<void> loadProducts() async {
     _items.clear();
 
     final response =

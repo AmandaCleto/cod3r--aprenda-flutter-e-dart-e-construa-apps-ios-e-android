@@ -27,7 +27,7 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
   void initState() {
     super.initState();
     Provider.of<ProductList>(context, listen: false)
-        .loadProduct()
+        .loadProducts()
         .then((value) {
       setState(
         () => _isLoading = false,

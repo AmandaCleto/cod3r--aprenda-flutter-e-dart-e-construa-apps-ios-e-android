@@ -12,7 +12,7 @@ class ProductsPage extends StatelessWidget {
     return Provider.of<ProductList>(
       context,
       listen: false,
-    ).loadProduct();
+    ).loadProducts();
   }
 
   @override
