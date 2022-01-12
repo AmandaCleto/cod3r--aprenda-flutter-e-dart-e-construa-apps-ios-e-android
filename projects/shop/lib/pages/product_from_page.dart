@@ -66,7 +66,6 @@ class _ProductFromPageState extends State<ProductFromPage> {
   }
 
   bool isValidImageUrl(String url) {
-    inspect(url);
     isValidUrl = Uri.tryParse(url)?.hasAbsolutePath ?? false;
     endsWithFile = url.toLowerCase().endsWith('.png') ||
         url.toLowerCase().endsWith('.jpg') ||
@@ -269,7 +268,7 @@ class _ProductFromPageState extends State<ProductFromPage> {
                               color: Colors.white,
                             ),
                           )
-                        : !endsWithFile && !isValidUrl
+                        : isValidImageUrl(_imageUrlController.text)
                             ? SizedBox(
                                 height: 100,
                                 width: 100,
@@ -282,15 +281,13 @@ class _ProductFromPageState extends State<ProductFromPage> {
                                   ),
                                 ),
                               )
-                            : SizedBox(
+                            : const SizedBox(
                                 height: 100,
                                 width: 100,
-                                child: FittedBox(
-                                  child: Image.network(
-                                    isValidImageUrl(_imageUrlController.text)
-                                        ? _imageUrlController.text
-                                        : '',
-                                    fit: BoxFit.cover,
+                                child: Text(
+                                  'Informe a Url',
+                                  style: TextStyle(
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
