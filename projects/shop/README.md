@@ -1,16 +1,59 @@
-# shop
+# Shop 🍴
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### A study project on **Flutter**
 
-A few resources to get you started if this is your first Flutter project:
+[![Flutter](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-flutter.svg)](https://flutter.dev/)
+[![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-dart.svg)](https://dart.dev/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<br>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📷 Illustrative images of the project:
+
+
+
+## 🎇 Apprenticeship:
+
+
+
+<br>
+
+
+
+## 🚀 How to execute the project:
+To run and view the project, you will need to follow the next steps.
+  * First you **must have Flutter installed in your machine**, to know more about this, see the doc: https://flutter.dev/docs/get-started/install;
+
+### Installing dependencies:
+Run the command to install the project dependencies.
+   ```sh
+   flutter pub get
+   ```
+<br>
+
+   ```sh
+   flutter create .
+   ```
+
+### Running the project:
+The scripts below run the project.
+   ```sh
+   flutter run
+   ```
+<br>
+
+## 👍 Conclusion:
+
+<br>
+
+After following the previous steps, the project is running in **development mode**.
+
+
+---
+## 🌐 Links:
+***Flutter:***<br>
+[<ins>Flutter docs</ins>](https://docs.flutter.dev/)<br>
+
+***Dart:***<br>
+[<ins>Dart docs</ins>](https://dart.dev/guides/)<br>
