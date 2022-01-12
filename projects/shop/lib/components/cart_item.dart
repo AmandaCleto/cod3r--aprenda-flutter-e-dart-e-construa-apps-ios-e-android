@@ -82,7 +82,8 @@ class CartItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          subtitle: Text('Total: R\$ ${cartItem.price * cartItem.quantity}'),
+          subtitle: Text(
+              'Total: R\$ ${(cartItem.price * cartItem.quantity).toStringAsFixed(2)}'),
           trailing: Text(
             '${cartItem.quantity}x',
             style: const TextStyle(
