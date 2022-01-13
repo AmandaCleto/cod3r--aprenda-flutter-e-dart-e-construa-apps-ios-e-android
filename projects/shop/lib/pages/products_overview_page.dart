@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop/components/app_drawer.dart';
 import 'package:shop/components/badge.dart';
 import 'package:shop/components/product_grid.dart';
-import 'package:shop/models/cart.dart';
+import 'package:shop/models/cart_list.dart';
 import 'package:shop/models/product_list.dart';
 import 'package:shop/utils/app_routes.dart';
 
@@ -29,9 +29,7 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
     Provider.of<ProductList>(context, listen: false)
         .loadProducts()
         .then((value) {
-      setState(
-        () => _isLoading = false,
-      );
+      setState(() => _isLoading = false);
     });
   }
 
@@ -63,7 +61,7 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
               });
             },
           ),
-          Consumer<Cart>(
+          Consumer<CartList>(
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(

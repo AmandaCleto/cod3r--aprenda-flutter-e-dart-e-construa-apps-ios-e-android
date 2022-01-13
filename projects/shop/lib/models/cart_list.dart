@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:shop/models/cart_item.dart';
 import 'package:shop/models/product.dart';
 
-class Cart with ChangeNotifier {
+class CartList with ChangeNotifier {
   Map<String, CartItem> _items = {};
 
   Map<String, CartItem> get items {

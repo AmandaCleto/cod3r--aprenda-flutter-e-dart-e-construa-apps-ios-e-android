@@ -32,10 +32,12 @@ class OrdersPage extends StatelessWidget {
             );
           } else if (snapshot.error != null) {
             return const Center(
-              child: Text('Ocorreu um erro!',
-                  style: TextStyle(
-                    color: Colors.white,
-                  )),
+              child: Text(
+                'Ocorreu um erro!',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             );
           } else {
             return RefreshIndicator(
