@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop/models/cart.dart';
+import 'package:shop/models/auth.dart';
+import 'package:shop/models/cart_list.dart';
 import 'package:shop/models/product.dart';
 import 'package:shop/utils/app_routes.dart';
 
@@ -10,7 +11,8 @@ class ProductGridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context, listen: true);
-    final cart = Provider.of<Cart>(context, listen: false);
+    final cart = Provider.of<CartList>(context, listen: false);
+    final auth = Provider.of<Auth>(context, listen: false);
 
     return Center(
       child: ClipRRect(
@@ -33,7 +35,7 @@ class ProductGridItem extends StatelessWidget {
             leading: Consumer<Product>(
               builder: (context, product, child) => IconButton(
                 onPressed: () => {
-                  product.toggleFavorite(),
+                  product.toggleFavorite(auth.token ?? ''),
                 },
                 icon: Icon(
                   product.isFavorite ? Icons.star : Icons.star_outline,

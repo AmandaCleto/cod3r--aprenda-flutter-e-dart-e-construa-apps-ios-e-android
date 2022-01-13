@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop/models/cart.dart';
+import 'package:shop/models/auth.dart';
+import 'package:shop/models/cart_list.dart';
+import 'package:shop/models/order.dart';
 import 'package:shop/models/order_list.dart';
 import 'package:shop/models/product_list.dart';
+import 'package:shop/pages/auth_or_home_page.dart';
+import 'package:shop/pages/auth_page.dart';
 import 'package:shop/pages/cart_page.dart';
 import 'package:shop/pages/orders_page.dart';
 import 'package:shop/pages/product_detail_page.dart';
 import 'package:shop/pages/product_form_page.dart';
 import 'package:shop/pages/products_page.dart';
-import 'package:shop/pages/products_overview_page.dart';
 import 'package:shop/theme/palette.dart';
 import 'package:shop/utils/app_routes.dart';
 
@@ -25,17 +28,32 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => ProductList(),
+          create: (_) => Auth(),
+        ),
+        ChangeNotifierProxyProvider<Auth, ProductList>(
+          create: (_) => ProductList('', []),
+          update: (context, auth, previous) {
+            return ProductList(
+              auth.token ?? '',
+              previous?.items ?? [],
+            );
+          },
+        ),
+        ChangeNotifierProxyProvider<Auth, OrderList>(
+          create: (_) => OrderList('', []),
+          update: (context, auth, previous) {
+            return OrderList(
+              auth.token ?? '',
+              previous?.items ?? [],
+            );
+          },
         ),
         ChangeNotifierProvider(
-          create: (_) => Cart(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => OrderList(),
+          create: (_) => CartList(),
         ),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Shop',
         theme: ThemeData(
           canvasColor: const Color.fromRGBO(18, 22, 25, 1),
           colorScheme: ColorScheme.fromSwatch(
@@ -46,7 +64,7 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         routes: {
-          AppRoutes.HOME: (context) => const ProductsOverviewPage(),
+          AppRoutes.AUTH_OR_HOME: (context) => const AuthOrHomePage(),
           AppRoutes.PRODUCT_DETAIL: (context) => const ProductDetailPage(),
           AppRoutes.CART: (context) => const CartPage(),
           AppRoutes.ORDERS: (context) => const OrdersPage(),
