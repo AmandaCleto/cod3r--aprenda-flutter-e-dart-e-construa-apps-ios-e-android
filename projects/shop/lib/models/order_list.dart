@@ -9,10 +9,12 @@ import 'package:shop/utils/constants.dart';
 
 class OrderList with ChangeNotifier {
   final String _token;
+  final String _userId;
   List<Order> _items = [];
 
   OrderList([
     this._token = '',
+    this._userId = '',
     this._items = const [],
   ]);
 
@@ -29,7 +31,7 @@ class OrderList with ChangeNotifier {
 
     final response = await http.get(
       Uri.parse(
-        '${Constants.OrdersBaseUrl}.json?auth=$_token',
+        '${Constants.OrdersBaseUrl}/$_userId.json?auth=$_token',
       ),
     );
 
@@ -66,7 +68,7 @@ class OrderList with ChangeNotifier {
 
     final response = await http.post(
       Uri.parse(
-        '${Constants.OrdersBaseUrl}.json?auth=$_token',
+        '${Constants.OrdersBaseUrl}/$_userId.json?auth=$_token',
       ),
       body: jsonEncode({
         'id': Random().nextDouble().toString(),
