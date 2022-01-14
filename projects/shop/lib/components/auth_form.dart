@@ -15,25 +15,62 @@ class AuthForm extends StatefulWidget {
   _AuthFormState createState() => _AuthFormState();
 }
 
-class _AuthFormState extends State<AuthForm> {
+class _AuthFormState extends State<AuthForm>
+    with SingleTickerProviderStateMixin {
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  bool _isLoading = false;
-  AuthMode _authMode = AuthMode.Login;
   final Map<String, String> _authData = {
     'email': '',
     'password': '',
   };
 
+  bool _isLoading = false;
+  AuthMode _authMode = AuthMode.Login;
+
+  AnimationController? _animationController;
+  Animation<Size>? _heighAnimation;
+
   bool _isLogin() => _authMode == AuthMode.Login;
   bool _isSignup() => _authMode == AuthMode.Signup;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        milliseconds: 250,
+      ),
+    );
+
+    _heighAnimation = Tween(
+      begin: const Size(double.infinity, 325),
+      end: const Size(double.infinity, 400),
+    ).animate(
+      CurvedAnimation(
+        parent: _animationController!,
+        curve: Curves.linear,
+      ),
+    );
+
+    _heighAnimation?.addListener(() => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _animationController?.dispose();
+  }
 
   void _switchAuthMode() {
     setState(() {
       if (_isLogin()) {
         _authMode = AuthMode.Signup;
+        _animationController?.forward();
       } else {
         _authMode = AuthMode.Login;
+        _animationController?.reverse();
       }
     });
   }
@@ -97,7 +134,8 @@ class _AuthFormState extends State<AuthForm> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Container(
-        height: _isLogin() ? 310 : 400,
+        // height: _isLogin() ? 310 : 400,
+        height: _heighAnimation?.value.height ?? (_isLogin() ? 310 : 400),
         width: deviceSize.width * 0.75,
         padding: const EdgeInsets.all(16),
         child: Form(
