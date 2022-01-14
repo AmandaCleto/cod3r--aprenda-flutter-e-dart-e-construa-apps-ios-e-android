@@ -18,41 +18,45 @@ class _OrderWidgetState extends State<OrderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        children: [
-          ListTile(
-            title: Text(
-              'R\$ ${widget.order.total.toStringAsFixed(2)}',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
+    final itemsHeight = (widget.order.products.length * 24.0) + 10;
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      height: _expanded ? itemsHeight + 80 : 80,
+      child: Card(
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(
+                'R\$ ${widget.order.total.toStringAsFixed(2)}',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              subtitle: Text(
+                DateFormat('dd/MM/yyyy hh:mm').format(widget.order.date),
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.expand_more),
+                onPressed: () {
+                  setState(() {
+                    _expanded = !_expanded;
+                  });
+                },
               ),
             ),
-            subtitle: Text(
-              DateFormat('dd/MM/yyyy hh:mm').format(widget.order.date),
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            trailing: IconButton(
-              icon: const Icon(Icons.expand_more),
-              onPressed: () {
-                setState(() {
-                  _expanded = !_expanded;
-                });
-              },
-            ),
-          ),
-          if (_expanded)
-            Container(
+            AnimatedContainer(
               padding: const EdgeInsets.symmetric(
                 horizontal: 15,
                 vertical: 4,
               ),
-              height: widget.order.products.length * 25.0 + 10,
+              duration: const Duration(milliseconds: 200),
+              height: _expanded ? itemsHeight : 0,
               child: ListView(
                 children: widget.order.products.map((product) {
                   return Row(
@@ -78,7 +82,8 @@ class _OrderWidgetState extends State<OrderWidget> {
                 }).toList(),
               ),
             )
-        ],
+          ],
+        ),
       ),
     );
   }
