@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:great_places/pages/place_form_page.dart';
 import 'package:great_places/pages/places_list_page.dart';
 import 'package:great_places/providers/great_places.dart';
@@ -6,7 +7,10 @@ import 'package:great_places/theme/palette.dart';
 import 'package:great_places/utils/app_routes.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
