@@ -1,7 +1,7 @@
 # Great Places 🗺
 
 A simple app that saves your favorite places in an internal data, using 'sqflite'.
-In this app you can: Write the place's title, Take a picture from the place and use the Map to find your favorite place or set your default location.
+In this app you can save the place's name, picture and location by using the Map or using your own location as it.
 
 ### A study project on **Flutter**
 
