@@ -7,7 +7,7 @@ import 'package:great_places/theme/palette.dart';
 import 'package:great_places/utils/app_routes.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await dotenv.load(fileName: ".env");
