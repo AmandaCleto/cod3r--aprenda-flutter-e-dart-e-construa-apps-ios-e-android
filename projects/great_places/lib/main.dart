@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:great_places/pages/place_detail_page.dart';
 import 'package:great_places/pages/place_form_page.dart';
 import 'package:great_places/pages/places_list_page.dart';
-import 'package:great_places/providers/great_places.dart';
+import 'package:great_places/provider/great_places.dart';
 import 'package:great_places/theme/palette.dart';
 import 'package:great_places/utils/app_routes.dart';
 import 'package:provider/provider.dart';
@@ -83,12 +84,14 @@ class MyApp extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               primary: Palette.customLightGreenColor, // background
               onPrimary: Palette.customDarkBlueColor, // foreground
+              onSurface: Palette.customGrayColor,
             ),
           ),
         ),
         home: const PlacesListPage(),
         routes: {
           AppRoutes.placeFormRoute: (context) => const PlaceFormPage(),
+          AppRoutes.placeDetail: (context) => const PlaceDetailPage(),
         },
       ),
     );
