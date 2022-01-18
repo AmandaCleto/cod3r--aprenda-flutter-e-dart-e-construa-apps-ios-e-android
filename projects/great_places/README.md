@@ -1,16 +1,62 @@
-# great_places
+# Great Places 🗺
 
-A new Flutter project.
+A simple app that saves your favorite places in an internal data, using 'sqflite'.
+In this app you can: Write the place's title, Take a picture from the place and use the Map to find your favorite place or set your default location.
 
-## Getting Started
+### A study project on **Flutter**
 
-This project is a starting point for a Flutter application.
+[![Flutter](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-flutter.svg)](https://flutter.dev/)
+[![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-dart.svg)](https://dart.dev/)
 
-A few resources to get you started if this is your first Flutter project:
+<br>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## 📷 Illustrative images of the project:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## 🎇 Apprenticeship:
+
+In this project my main learn was in how to use native resources such as Map, Camera and Database;
+
+<br>
+
+
+## 🚀 How to execute the project:
+To run and view the project, you will need to follow the next steps.
+  * First you **must have Flutter installed in your machine**, to know more about this, see the doc: https://flutter.dev/docs/get-started/install;
+
+### Define GOOGLE_MAPS_API_KEY variable:
+Create the ```.env``` file beside ```.env_example``` file and define your api key from Google Cloud Platform in GOOGLE_MAPS_API_KEY variable.
+
+
+### Installing dependencies:
+Run the command to install the project dependencies.
+   ```sh
+   flutter pub get
+   ```
+<br>
+
+   ```sh
+   flutter create .
+   ```
+
+### Running the project:
+The scripts below run the project.
+   ```sh
+   flutter run
+   ```
+<br>
+
+## 👍 Conclusion:
+
+<br>
+
+After following the previous steps, the project is running in **development mode**.
+
+
+---
+## 🌐 Links:
+***Flutter:***<br>
+[<ins>Flutter docs</ins>](https://docs.flutter.dev/)<br>
+
+***Dart:***<br>
+[<ins>Dart docs</ins>](https://dart.dev/guides/)<br>
