@@ -1,7 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:great_places/providers/great_places.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:great_places/provider/great_places.dart';
 import 'package:great_places/theme/palette.dart';
 import 'package:great_places/widgets/image_input.dart';
 import 'package:great_places/widgets/location_input.dart';
@@ -17,19 +17,31 @@ class PlaceFormPage extends StatefulWidget {
 class _PlaceFormPageState extends State<PlaceFormPage> {
   final _titleController = TextEditingController();
   File? _pickedImage;
+  LatLng? _pickedPosition;
 
   void _selectImage(File pickedImage) {
-    _pickedImage = pickedImage;
+    setState(() {
+      _pickedImage = pickedImage;
+    });
+  }
+
+  void _selectPosition(LatLng position) {
+    setState(() {
+      _pickedPosition = position;
+    });
+  }
+
+  bool _isValidForm() {
+    return _titleController.text.isNotEmpty &&
+        _pickedImage != null &&
+        _pickedPosition != null;
   }
 
   void _submitForm() {
-    if (_titleController.text.isEmpty || _pickedImage == null) {
-      return;
-    }
-
     Provider.of<GreatPlaces>(context, listen: false).addPlace(
       _titleController.text,
-      _pickedImage!,
+      _pickedImage as File,
+      _pickedPosition as LatLng,
     );
 
     Navigator.of(context).pop();
@@ -40,7 +52,7 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Meus Lugares',
+          'Novo Lugar',
         ),
       ),
       body: Padding(
@@ -58,17 +70,14 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
                       decoration: const InputDecoration(
                         labelText: 'Título',
                       ),
+                      onChanged: (text) {
+                        setState(() {});
+                      },
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    ImageInput(
-                      onSelectImage: _selectImage,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    LocationInput()
+                    const SizedBox(height: 10),
+                    ImageInput(onSelectImage: _selectImage),
+                    const SizedBox(height: 10),
+                    LocationInput(onSelectPosition: _selectPosition)
                   ],
                 ),
               ),
@@ -77,9 +86,11 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
         ),
       ),
       bottomNavigationBar: Material(
-        color: Palette.customLightGreenColor,
+        color: _isValidForm()
+            ? Palette.customLightGreenColor
+            : Palette.customGrayColor,
         child: InkWell(
-          onTap: _submitForm,
+          onTap: _isValidForm() ? _submitForm : null,
           child: SizedBox(
             height: 50,
             width: double.infinity,
