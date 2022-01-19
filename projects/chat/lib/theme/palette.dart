@@ -14,16 +14,16 @@ class Palette {
     900: Color.fromRGBO(55, 63, 81, 1),
   };
   static const Map<int, Color> _lightGray = {
-    50: Color.fromRGBO(216, 219, 226, .1),
-    100: Color.fromRGBO(216, 219, 226, .2),
-    200: Color.fromRGBO(216, 219, 226, .3),
-    300: Color.fromRGBO(216, 219, 226, .4),
-    400: Color.fromRGBO(216, 219, 226, .5),
-    500: Color.fromRGBO(216, 219, 226, .6),
-    600: Color.fromRGBO(216, 219, 226, .7),
-    700: Color.fromRGBO(216, 219, 226, .8),
-    800: Color.fromRGBO(216, 219, 226, .9),
-    900: Color.fromRGBO(216, 219, 226, 1),
+    50: Color.fromRGBO(236, 237, 241, .1),
+    100: Color.fromRGBO(236, 237, 241, .2),
+    200: Color.fromRGBO(236, 237, 241, .3),
+    300: Color.fromRGBO(236, 237, 241, .4),
+    400: Color.fromRGBO(236, 237, 241, .5),
+    500: Color.fromRGBO(236, 237, 241, .6),
+    600: Color.fromRGBO(236, 237, 241, .7),
+    700: Color.fromRGBO(236, 237, 241, .8),
+    800: Color.fromRGBO(236, 237, 241, .9),
+    900: Color.fromRGBO(236, 237, 241, 1),
   };
   static const Map<int, Color> _green = {
     50: Color.fromRGBO(88, 167, 176, .1),
@@ -56,7 +56,7 @@ class Palette {
   );
 
   static const MaterialColor customLightColor = MaterialColor(
-    0xFFD8DBE2,
+    0xFFECEDF1,
     Palette._lightGray,
   );
 
@@ -69,4 +69,11 @@ class Palette {
     0xFFA9BCD0,
     Palette._gray,
   );
+
+  static const beanColors = [
+    Color(0xFFEF9CA4),
+    Color(0xFF373F51),
+    Color(0xFFEEB868),
+    Color(0xFF657776),
+  ];
 }
