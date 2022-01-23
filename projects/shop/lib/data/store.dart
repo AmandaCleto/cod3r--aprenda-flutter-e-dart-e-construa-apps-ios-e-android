@@ -4,8 +4,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class Store {
   static Future<bool> saveString(String key, String value) async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.setString(key, value);
+    final preferences = await SharedPreferences.getInstance();
+    return preferences.setString(key, value);
   }
 
   static Future<bool> saveMap(String key, Map<String, dynamic> value) {
@@ -14,8 +14,8 @@ class Store {
 
   static Future<String> getString(String key,
       [String defaultValue = '']) async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getString(key) ?? defaultValue;
+    final preferences = await SharedPreferences.getInstance();
+    return preferences.getString(key) ?? defaultValue;
   }
 
   static Future<Map<String, dynamic>> getMap(String key) async {
@@ -27,7 +27,7 @@ class Store {
   }
 
   static Future<bool> remove(String key) async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.remove(key);
+    final preferences = await SharedPreferences.getInstance();
+    return preferences.remove(key);
   }
 }
