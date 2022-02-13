@@ -1,5 +1,5 @@
 # Shop 🛍
-
+A shop store where people can create their own account, see the list of products available to buy,  buy them, or even create more products to the store.
 
 
 ### A study project on **Flutter**
@@ -9,13 +9,13 @@
 
 <br>
 
-## 📷 Illustrative images of the project:
+## 📷 Illustrative gif of the project:
 
+![](https://amandacleto.github.io/images-for-projects/public/images/github-readme/cod3r-aprenda-flutter-e-dart-e-construa-apps-ios-e-android-shop.gif)
 
 
 ## 🎇 Apprenticeship:
-
-
+In this project my main learn was in how to integrate a flutter app with Firebase, using manipulation of CRUD (create, read, update and delete) and authentication.
 
 <br>
 
