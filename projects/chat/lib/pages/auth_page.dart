@@ -22,6 +22,7 @@ class _AuthPageState extends State<AuthPage> {
           formData.email,
           formData.password,
         );
+        setState(() => _isLoading = false);
       } else {
         await AuthService().signup(
           formData.email,
@@ -29,11 +30,10 @@ class _AuthPageState extends State<AuthPage> {
           formData.name,
           formData.image,
         );
+        setState(() => _isLoading = false);
       }
     } catch (e) {
       //error
-    } finally {
-      setState(() => _isLoading = false);
     }
   }
 
