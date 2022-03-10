@@ -11,6 +11,7 @@ In this app you can save the place's name, picture and location by using the Map
 <br>
 
 ## 📷 Illustrative images of the project:
+[![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/cod3r-aprenda-flutter-e-dart-e-construa-apps-ios-e-android-great-places.gif)](https://dart.dev/)
 
 
 ## 🎇 Apprenticeship:
