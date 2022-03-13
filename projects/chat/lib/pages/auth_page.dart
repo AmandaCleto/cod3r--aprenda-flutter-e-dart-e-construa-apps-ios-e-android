@@ -54,7 +54,11 @@ class _AuthPageState extends State<AuthPage> {
                 color: Color.fromRGBO(0, 0, 0, 0.5),
               ),
               child: const Center(
-                child: CircularProgressIndicator(),
+                child: SizedBox(
+                  height: 30,
+                  width: 30,
+                  child: CircularProgressIndicator(),
+                ),
               ),
             ),
         ],

@@ -71,7 +71,8 @@ class AuthFirebaseService implements AuthService {
     await credential.user?.updatePhotoURL(imageUrl);
 
     //3. save user in database
-    await _saveChatUser(_toChatUser(credential.user!, imageUrl));
+    _currentUser = _toChatUser(credential.user!, imageUrl, name);
+    await _saveChatUser(_currentUser!);
   }
 
   Future<String> _uploadUserImage(File? image, String imageName) async {
@@ -90,8 +91,9 @@ class AuthFirebaseService implements AuthService {
 
   Future<void> _saveChatUser(ChatUser user) async {
     final storage = FirebaseFirestore.instance;
-    final docRef =
-        storage.collection('users').doc(user.id); //column id from users table
+    final docRef = storage.collection('users').doc(
+          user.id,
+        ); //column id from users table
 
     return docRef.set({
       'name': user.name,
@@ -100,10 +102,10 @@ class AuthFirebaseService implements AuthService {
     });
   }
 
-  static ChatUser _toChatUser(User user, [String? imageUrl]) {
+  static ChatUser _toChatUser(User user, [String? imageUrl, String? name]) {
     return ChatUser(
       id: user.uid,
-      name: user.displayName ?? user.email!.split('@')[0],
+      name: name ?? user.displayName ?? user.email!.split('@')[0],
       email: user.email!,
       image: imageUrl ?? user.photoURL ?? '',
     );

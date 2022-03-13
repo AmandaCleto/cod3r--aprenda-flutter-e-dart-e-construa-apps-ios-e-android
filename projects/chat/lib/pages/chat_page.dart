@@ -12,10 +12,16 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentUser = AuthService().currentUser;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(('Chat')),
+          title: Text(
+            ('Chat: ${currentUser?.name}'),
+            style: const TextStyle(
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
           actions: [
             DropdownButtonHideUnderline(
               child: DropdownButton(

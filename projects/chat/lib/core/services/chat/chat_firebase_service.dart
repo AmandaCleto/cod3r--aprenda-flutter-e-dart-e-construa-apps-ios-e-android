@@ -7,14 +7,36 @@ import 'dart:async';
 class ChatFirebaseService implements ChatService {
   @override
   Stream<List<ChatMessage>> messagesStream() {
-    return Stream<List<ChatMessage>>.empty();
+    final storage = FirebaseFirestore.instance;
+    final snapshots = storage
+        .collection('chat')
+        .withConverter(
+          fromFirestore: _fromFirestore,
+          toFirestore: _toFirestore,
+        )
+        .orderBy('createAt', descending: true)
+        .snapshots();
+
+    return Stream<List<ChatMessage>>.multi((controller) {
+      snapshots.listen((snapshot) {
+        List<ChatMessage> list = snapshot.docs.map((doc) {
+          return doc.data();
+        }).toList();
+        controller.add(list);
+      });
+    });
+
+    //other way
+    // return snapshots.map((snapshot) {
+    //   return snapshot.docs.map((doc) {
+    //     return doc.data();
+    //   }).toList();
+    // });
   }
 
   @override
   Future<ChatMessage> save(String text, ChatUser user) async {
     final storage = FirebaseFirestore.instance;
-
-    print('0');
     final message = ChatMessage(
       id: '',
       text: text,
@@ -23,14 +45,12 @@ class ChatFirebaseService implements ChatService {
       userName: user.name,
       userImage: user.image,
     );
-    print('1');
 
     final docRef = await storage
         .collection('chat')
         .withConverter(fromFirestore: _fromFirestore, toFirestore: _toFirestore)
         .add(message);
 
-    print('2');
     final snapshot = await docRef.get();
     return snapshot.data()!;
   }
