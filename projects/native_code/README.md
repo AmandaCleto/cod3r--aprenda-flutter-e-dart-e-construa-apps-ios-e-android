@@ -1,4 +1,4 @@
-# Native Code 🛍
+# Native Code ⚙️
 This project execute a sum of two values using native code written in swift and kotlin.
 
 ### A study project on **Flutter**
