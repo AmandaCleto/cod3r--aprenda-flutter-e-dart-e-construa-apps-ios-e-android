@@ -13,7 +13,7 @@ class MineFieldApp extends StatefulWidget {
 }
 
 class _MineFieldAppState extends State<MineFieldApp> {
-  final int _quantityOfBombs = 1;
+  final int _quantityOfBombs = 5;
   bool? _won;
   Board? _board;
   int totalOfFields = 0;
@@ -23,7 +23,7 @@ class _MineFieldAppState extends State<MineFieldApp> {
     required double heightScreen,
   }) {
     if (_board == null) {
-      int quantityOfColumns = 2;
+      int quantityOfColumns = 10;
       double fieldSize = widthScreen / quantityOfColumns;
       int quantityOfRows = (heightScreen / fieldSize).floor();
 
@@ -81,6 +81,7 @@ class _MineFieldAppState extends State<MineFieldApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.grey,
         appBar: ResultWidget(wonTheGame: _won, onRestartGame: _restart),
         body: Container(
           color: Colors.grey,
