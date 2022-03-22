@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:minefield/components/board_widget.dart';
 import 'package:minefield/components/result_widget.dart';
@@ -49,7 +47,6 @@ class _MineFieldAppState extends State<MineFieldApp> {
   }
 
   _open(Field field) {
-    inspect(field);
     if (_won != null) {
       return;
     }
@@ -82,24 +79,22 @@ class _MineFieldAppState extends State<MineFieldApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey,
-        appBar: ResultWidget(wonTheGame: _won, onRestartGame: _restart),
-        body: Container(
-          color: Colors.grey,
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              return BoardWidget(
-                board: _getBoard(
-                  widthScreen: constraints.maxWidth,
-                  heightScreen: constraints.maxHeight,
-                ),
-                onOpen: _open,
-                onToggleMark: _toggleMark,
-              );
-            },
-          ),
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      appBar: ResultWidget(wonTheGame: _won, onRestartGame: _restart),
+      body: Container(
+        color: Colors.grey,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return BoardWidget(
+              board: _getBoard(
+                widthScreen: constraints.maxWidth,
+                heightScreen: constraints.maxHeight,
+              ),
+              onOpen: _open,
+              onToggleMark: _toggleMark,
+            );
+          },
         ),
       ),
     );
