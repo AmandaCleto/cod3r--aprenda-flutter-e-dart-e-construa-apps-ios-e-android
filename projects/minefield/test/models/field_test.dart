@@ -48,7 +48,7 @@ main() {
       field.addNeighbors(field3);
       field.addNeighbors(field4);
 
-      expect(field.quantityOfNeighbors, 2);
+      expect(field.quantityOfMinedNeighbors, 2);
     });
   });
 }

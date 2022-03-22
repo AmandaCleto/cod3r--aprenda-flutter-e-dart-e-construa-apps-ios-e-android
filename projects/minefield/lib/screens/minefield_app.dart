@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:minefield/components/board_widget.dart';
 import 'package:minefield/components/result_widget.dart';
@@ -47,6 +49,7 @@ class _MineFieldAppState extends State<MineFieldApp> {
   }
 
   _open(Field field) {
+    inspect(field);
     if (_won != null) {
       return;
     }

@@ -14,7 +14,7 @@ class FieldWidget extends StatelessWidget {
   }) : super(key: key);
 
   Widget _getImage() {
-    int quantityOfMines = field.quantityOfNeighbors;
+    int quantityOfMines = field.quantityOfMinedNeighbors;
 
     if (field.open && field.mined && field.exploded) {
       return Image.asset('assets/images/bomb_0.jpeg');

@@ -41,6 +41,7 @@ class Field {
     _open = true;
 
     if (_mined) {
+      //if it has a bomb in this spot
       _exploded = true;
       throw ExplosionException();
     }
@@ -100,7 +101,7 @@ class Field {
     return neighbors.every((neighbor) => !neighbor.mined);
   }
 
-  int get quantityOfNeighbors {
+  int get quantityOfMinedNeighbors {
     return neighbors.where((neighbor) => neighbor.mined).length;
   }
 }
