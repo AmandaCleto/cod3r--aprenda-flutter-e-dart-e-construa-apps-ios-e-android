@@ -66,6 +66,16 @@ class Board {
   }
 
   bool get solvedBoard {
+    int _totalOpened = 0;
+    int _totalMustBeOpenedToWin = (columns * rows) - quantityOfBombs;
+
+    for (var field in _fields) {
+      _totalOpened += field.open ? 1 : 0;
+      if (_totalOpened == _totalMustBeOpenedToWin) {
+        return true;
+      }
+    }
+
     return _fields.every((field) => field.solvedSpot);
   }
 }

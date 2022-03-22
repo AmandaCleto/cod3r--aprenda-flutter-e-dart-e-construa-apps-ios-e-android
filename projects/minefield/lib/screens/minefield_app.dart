@@ -13,32 +13,36 @@ class MineFieldApp extends StatefulWidget {
 }
 
 class _MineFieldAppState extends State<MineFieldApp> {
+  final int _quantityOfBombs = 1;
   bool? _won;
-  Board _board = Board(rows: 10, columns: 10, quantityOfBombs: 10);
+  Board? _board;
+  int totalOfFields = 0;
 
   Board _getBoard({
     required double widthScreen,
     required double heightScreen,
   }) {
     if (_board == null) {
-      int quantityOfColumns = 15;
+      int quantityOfColumns = 2;
       double fieldSize = widthScreen / quantityOfColumns;
       int quantityOfRows = (heightScreen / fieldSize).floor();
+
+      totalOfFields = quantityOfRows * quantityOfColumns;
 
       _board = Board(
         columns: quantityOfColumns,
         rows: quantityOfRows,
-        quantityOfBombs: 3,
+        quantityOfBombs: _quantityOfBombs,
       );
     }
 
-    return _board;
+    return _board!;
   }
 
   _restart() {
     setState(() {
       _won = null;
-      _board.restart();
+      _board!.restart();
     });
   }
 
@@ -50,12 +54,12 @@ class _MineFieldAppState extends State<MineFieldApp> {
     setState(() {
       try {
         field.openBomb();
-        if (_board.solvedBoard) {
+        if (_board!.solvedBoard) {
           _won = true;
         }
       } on ExplosionException {
         _won = false;
-        _board.revealBombs();
+        _board!.revealBombs();
       }
     });
   }
@@ -67,7 +71,7 @@ class _MineFieldAppState extends State<MineFieldApp> {
 
     setState(() {
       field.toggleMark();
-      if (_board.solvedBoard) {
+      if (_board!.solvedBoard) {
         _won = true;
       }
     });
