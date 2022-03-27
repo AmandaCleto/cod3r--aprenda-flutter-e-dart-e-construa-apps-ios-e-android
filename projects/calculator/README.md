@@ -1,16 +1,60 @@
-# calculator
+# Calculator 🧮
 
-A new Flutter project.
+A calculator with the apple layout
 
-## Getting Started
+### A study project on **Flutter**
 
-This project is a starting point for a Flutter application.
+[![Flutter](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-flutter.svg)](https://flutter.dev/)
+[![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/icon-dart.svg)](https://dart.dev/)
 
-A few resources to get you started if this is your first Flutter project:
+<br>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## 📷 Illustrative images of the project:
+[![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/cod3r-aprenda-flutter-e-dart-e-construa-apps-ios-e-android-calculator.gif)](https://dart.dev/)
+[![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/cod3r-aprenda-flutter-e-dart-e-construa-apps-ios-e-android-calculator.jpeg)](https://dart.dev/)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+## 🎇 Apprenticeship:
+
+In this project my main learn was in how to create the logic of a calculator.
+
+<br>
+
+
+## 🚀 How to execute the project:
+To run and view the project, you will need to follow the next steps.
+  * First you **must have Flutter installed in your machine**, to know more about this, see the doc: https://flutter.dev/docs/get-started/install;
+
+### Installing dependencies:
+Run the command to install the project dependencies.
+   ```sh
+   flutter pub get
+   ```
+<br>
+
+   ```sh
+   flutter create .
+   ```
+
+### Running the project:
+The scripts below run the project.
+   ```sh
+   flutter run
+   ```
+<br>
+
+## 👍 Conclusion:
+
+<br>
+
+After following the previous steps, the project is running in **development mode**.
+
+
+---
+## 🌐 Links:
+***Flutter:***<br>
+[<ins>Flutter docs</ins>](https://docs.flutter.dev/)<br>
+
+***Dart:***<br>
+[<ins>Dart docs</ins>](https://dart.dev/guides/)<br>
