@@ -11,13 +11,15 @@ A calculator with the apple layout
 
 ## 📷 Illustrative images of the project:
 [![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/cod3r-aprenda-flutter-e-dart-e-construa-apps-ios-e-android-calculator.gif)](https://dart.dev/)
+
+Splash screen
 [![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/cod3r-aprenda-flutter-e-dart-e-construa-apps-ios-e-android-calculator.jpeg)](https://dart.dev/)
 
 
 
 ## 🎇 Apprenticeship:
 
-In this project my main learn was in how to create the logic of a calculator.
+In this project my main learn was in how to create the logic of a calculator and how to insert a splash screen.
 
 <br>
 
