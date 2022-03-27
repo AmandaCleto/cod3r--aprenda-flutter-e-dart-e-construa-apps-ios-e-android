@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro/utils/sizes.dart';
 
 class ButtonTimerWidget extends StatelessWidget {
   final IconData icon;
@@ -14,11 +15,17 @@ class ButtonTimerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var isMobile = MediaQuery.of(context).size.width < Sizes.mobile;
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: Colors.black,
-        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
-        textStyle: const TextStyle(fontSize: 25.0),
+        padding: EdgeInsets.symmetric(
+          vertical: 20.0,
+          horizontal: isMobile ? 15.0 : 30.0,
+        ),
+        textStyle: TextStyle(
+          fontSize: isMobile ? 20.0 : 25.0,
+        ),
       ),
       child: Row(
         children: [
@@ -26,7 +33,7 @@ class ButtonTimerWidget extends StatelessWidget {
             padding: const EdgeInsets.only(right: 10.0),
             child: Icon(
               icon,
-              size: 35.0,
+              size: isMobile ? 20.0 : 35.0,
             ),
           ),
           Text(text),

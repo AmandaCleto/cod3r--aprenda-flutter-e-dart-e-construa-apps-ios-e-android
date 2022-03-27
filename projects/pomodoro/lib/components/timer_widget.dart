@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:pomodoro/components/button_timer_widget.dart';
 import 'package:pomodoro/store/pomodoro.store.dart';
+import 'package:pomodoro/utils/sizes.dart';
 import 'package:provider/provider.dart';
 
 class TimerWidget extends StatelessWidget {
@@ -10,6 +11,7 @@ class TimerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = Provider.of<PomodoroStore>(context);
+    var isMobile = MediaQuery.of(context).size.width < Sizes.mobile;
 
     return Observer(builder: (_) {
       return Container(
@@ -20,19 +22,21 @@ class TimerWidget extends StatelessWidget {
           children: [
             Text(
               store.isWorking() ? 'Hora de Trabalhar' : 'Hora de Descansar',
-              style: const TextStyle(
-                fontSize: 40,
+              style: TextStyle(
+                fontSize: isMobile ? 30.5 : 40.0,
                 color: Colors.white,
               ),
             ),
             const SizedBox(
               height: 20.0,
             ),
-            Text(
-              '${store.minutes.toString().padLeft(2, '0')}:${store.seconds.toString().padLeft(2, '0')}',
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 120.0,
+            Flexible(
+              child: Text(
+                '${store.minutes.toString().padLeft(2, '0')}:${store.seconds.toString().padLeft(2, '0')}',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: isMobile ? 80.0 : 120.0,
+                ),
               ),
             ),
             const SizedBox(

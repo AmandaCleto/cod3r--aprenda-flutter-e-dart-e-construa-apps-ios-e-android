@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:pomodoro/components/button_increase_decrease_widget.dart';
 import 'package:pomodoro/store/pomodoro.store.dart';
+import 'package:pomodoro/utils/sizes.dart';
 import 'package:provider/provider.dart';
 
 class TimeInputWidget extends StatelessWidget {
@@ -19,52 +21,41 @@ class TimeInputWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final store = Provider.of<PomodoroStore>(context);
+    var isMobile = MediaQuery.of(context).size.width < Sizes.mobile;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           title,
-          style: const TextStyle(fontSize: 25),
+          style: TextStyle(
+            fontSize: isMobile ? 20.0 : 25.0,
+          ),
         ),
         const SizedBox(
           height: 10,
         ),
-        Observer(builder: (context) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: dec,
-                child: const Icon(
-                  Icons.arrow_downward,
-                  color: Colors.white,
+        Observer(
+          builder: (context) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ButtonIncreaseDecreaseWidget(
+                  function: dec,
+                  icon: Icons.arrow_downward,
                 ),
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  padding: const EdgeInsets.all(15),
-                  primary: store.isWorking() ? Colors.red : Colors.green,
+                Text(
+                  '${value.toString()} min',
+                  style: const TextStyle(fontSize: 18),
                 ),
-              ),
-              Text(
-                '${value.toString()} min',
-                style: const TextStyle(fontSize: 18),
-              ),
-              ElevatedButton(
-                onPressed: inc,
-                child: const Icon(
-                  Icons.arrow_upward,
-                  color: Colors.white,
+                ButtonIncreaseDecreaseWidget(
+                  function: inc,
+                  icon: Icons.arrow_upward,
                 ),
-                style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(),
-                  padding: const EdgeInsets.all(15),
-                  primary: store.isWorking() ? Colors.red : Colors.green,
-                ),
-              ),
-            ],
-          );
-        }),
+              ],
+            );
+          },
+        ),
       ],
     );
   }
