@@ -33,7 +33,7 @@
 
 **/ios/GoogleService-Info.plist
 /web/index.html
-**/android/app/google-services.json
+./android/app/google-services.json
 /lib/keys.dart
 
 
