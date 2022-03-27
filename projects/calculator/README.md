@@ -9,7 +9,7 @@ A calculator with the apple layout
 
 <br>
 
-## 📷 Illustrative images of the project:
+## 📷 Illustrative gif of the project:
 [![Dart](https://amandacleto.github.io/images-for-projects/public/images/github-readme/cod3r-aprenda-flutter-e-dart-e-construa-apps-ios-e-android-calculator.gif)](https://dart.dev/)
 
 ### Splash screen
