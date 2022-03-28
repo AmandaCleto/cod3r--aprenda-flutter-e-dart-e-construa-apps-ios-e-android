@@ -19,6 +19,8 @@ A real time chat that people can register or sign-in into the app, the user also
 In this project my main learn was in how to integrate FIREBASE in flutter;
 I also learned how to display real-time notifications for the users, allowing a background and foreground notification; Moreover, Along with the course I did some features as: register, sign in and image upload if the user wants it, if nots, so the app will provide a default image (flutter_boring_avatars) based on its name.
 
+note: the source of firebase integration is available to consultation. The real project in firebase is already deleted.
+
 <br>
 
 

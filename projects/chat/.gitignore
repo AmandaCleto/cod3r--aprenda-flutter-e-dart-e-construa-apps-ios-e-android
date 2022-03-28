@@ -31,10 +31,13 @@
 .pub/
 /build/
 
-**/ios/GoogleService-Info.plist
-/web/index.html
-./android/app/google-services.json
-/lib/keys.dart
+
+
+# What should ignore when commiting on git
+# **/ios/GoogleService-Info.plist
+# /web/index.html
+# ./android/app/google-services.json
+# /lib/keys.dart
 
 
 # Web related
